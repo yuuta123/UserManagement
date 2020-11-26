@@ -1,0 +1,12 @@
+h1 会社の新規登録
+
+.nav.justify-content-end
+  = link_to '一覧', companies_path, class: 'nav-link'
+
+= form_with model: @companies do |f|
+
+  .form-group
+    = f.label '会社名'
+    = f.text_field :name, class: 'form-control'
+
+  = f.submit class: 'btn btn-primary'
