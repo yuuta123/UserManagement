@@ -7,7 +7,9 @@ class CompaniesController < ApplicationController
   end
 
   def create
-
+    company = Company.new(company_params)
+    company.save!
+    redirect_to companies_path, notice: "「#{company.name}」を登録しました。"
   end
 
   def show
@@ -17,6 +19,10 @@ class CompaniesController < ApplicationController
   end
 
   private
+
+  def company_params
+    params.require(:company).permit(:name)
+  end
 
   
 end
