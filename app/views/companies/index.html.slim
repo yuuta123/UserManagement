@@ -4,11 +4,9 @@ table.table.table-striped
   thead
     tr
       th 会社名
-      th
   tbody
     - @companies.each do |com|
       tr
-        td = com.name
-        td = link_to '削除', companies_path, method: :delete, class: 'btn btn-danger'
+        td = link_to com.name, company_path(com.id)
 
 = link_to "新規登録", new_company_path, class: "btn btn-primary"

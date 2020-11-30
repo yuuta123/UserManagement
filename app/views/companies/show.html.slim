@@ -1,2 +1,4 @@
-h1 Companies#show
-p Find me in app/views/companies/show.html.slim
+h1 「#{@company.name}」の詳細画面
+
+= link_to "編集", "path", class: 'btn btn-primary mr-2'
+= link_to "削除", "path", class: 'btn btn-danger'
