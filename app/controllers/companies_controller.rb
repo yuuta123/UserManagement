@@ -20,6 +20,9 @@ class CompaniesController < ApplicationController
   def edit
   end
 
+  def destroy
+  end
+
   private
 
   def company_params

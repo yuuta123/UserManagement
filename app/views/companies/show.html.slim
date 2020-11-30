@@ -1,4 +1,20 @@
 h1 「#{@company.name}」の詳細画面
 
-= link_to "編集", "path", class: 'btn btn-primary mr-2'
-= link_to "削除", "path", class: 'btn btn-danger'
+.nav.justify-content-end
+  = link_to '一覧', companies_path, class: 'nav-link'
+
+table.table
+  thead
+    th ID
+    th 会社名
+    th 登録日
+    th 更新日
+  tbody
+    td = @company.id
+    td = @company.name
+    td = @company.created_at
+    td = @company.updated_at
+
+
+= link_to "編集", edit_company_path, class: 'btn btn-primary mr-2'
+= link_to "削除", companies_path, method: :delete, class: 'btn btn-danger'
